@@ -4,7 +4,11 @@ import { VscCode } from "react-icons/vsc";
 const Footer = () => {
   return (
     <footer className="text-gray-500 text-center">
-      <a href="https://github.com/jieunchung/meme-generator" target="_blank">
+      <a
+        href="https://github.com/jieunchung/meme-generator"
+        target="_blank"
+        rel="noreferrer"
+      >
         <VscCode className="inline-block hover:text-black" />
       </a>
     </footer>

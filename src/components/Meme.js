@@ -9,8 +9,9 @@ const Meme = () => {
 
   const [meme, setMeme] = useState({
     text1: "",
-    text2: "",
+    text2: "I should buy a boat",
     randomImage: "https://i.imgflip.com/tau4.jpg",
+    alt: "I should buy a boat cat",
   });
 
   const handleChange = (e) => {
@@ -33,10 +34,12 @@ const Meme = () => {
       .map((filteredMeme) => filteredMeme);
     const randomNumber = Math.floor(Math.random() * memeArray.length);
     const imageUrl = memeArray[randomNumber].url;
+    const alt = memeArray[randomNumber].name;
 
     setMeme((prev) => ({
       ...prev,
       randomImage: imageUrl,
+      alt: alt,
     }));
   };
 
@@ -73,16 +76,20 @@ const Meme = () => {
       </div>
       {/* image && result */}
       <div className="relative max-w-full">
-        <img className="max-w-full min-h-full" src={meme.randomImage} />
+        <img
+          className="max-w-full min-h-full"
+          src={meme.randomImage}
+          alt={meme.alt}
+        />
         <h2
           style={shadow}
-          className="absolute w-full text-center top-2 text-xl sm:text-4xl font-bold text-white uppercase"
+          className="absolute w-full text-center top-2 text-xl sm:text-3xl font-bold text-white uppercase"
         >
           {meme.text1}
         </h2>
         <h2
           style={shadow}
-          className="absolute w-full text-center bottom-2 text-xl sm:text-4xl font-bold text-white uppercase
+          className="absolute w-full text-center bottom-2 text-xl sm:text-3xl font-bold text-white uppercase
         "
         >
           {meme.text2}
